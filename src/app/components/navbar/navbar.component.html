@@ -2,20 +2,19 @@
   <a class="navbar-brand" href="#">Auth0 App</a>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active" >
-        <a class="nav-link" routerLink="/home"
-          >Home</a
-        >
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/home">Home</a>
       </li>
-      <li class="nav-item" routerLinkActive="active" >
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/precios">Precios</a>
       </li>
-      <li class="nav-item" routerLinkActive="active" >
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/protegida">Protegida</a>
       </li>
     </ul>
-    <span class="navbar-text">
-      Navbar text with an inline element
-    </span>
+    <header>
+      <button class="btn btn-outline-primary" (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
+      <button class="btn btn-outline-danger" (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
+    </header>
   </div>
 </nav>
